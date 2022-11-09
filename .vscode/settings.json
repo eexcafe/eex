@@ -1,0 +1,28 @@
+{
+  "cucumber.features": [
+    "app/features/**/*.feature",
+    "src/test/**/*.feature",
+    "features/**/*.feature",
+    "tests/**/*.feature",
+    "*specs*/**/.feature"
+  ],
+  "cucumber.glue": [
+    "app/tests/**/*.rs",
+    "features/**/*.ts",
+    "features/**/*.tsx",
+    "tests/**/*.rs",
+    "features/**/*.rs"
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true,
+    "javascript": true,
+    "python": true,
+    "cucumber": true,
+    "rust": true
+  },
+  "commentTranslate.targetLanguage": "zh-CN"
+}
