@@ -1,5 +1,5 @@
-FROM rust:alpine3.15 as builder
-WORKDIR /usr/src/myapp
+FROM rust:slim-buster as builder
+WORKDIR /usr/src/eex
 COPY . .
 RUN cargo install --path . --target x86_64-unknown-linux-musl
 

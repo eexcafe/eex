@@ -22,10 +22,11 @@ jobs:
         run: cargo test --verbose
 
       - name: Build
-        if: success()
+        if: success() && github.ref_type == 'tag'
         run: cargo build --verbose
 
       - name: Docker meta
+        if: github.ref_type == 'tag'
         id: meta
         uses: docker/metadata-action@v4
         with:
@@ -45,6 +46,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build and push
+        if: github.ref_type == 'tag'
         uses: docker/build-push-action@v3
         with:
           context: .
